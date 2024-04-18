@@ -9,6 +9,7 @@ public class Triangle extends Shape{
         this.secondSide=secondSide;
         this.thirdSide=thirdSide;
     }
+    //TODO:yuvarlaqlasdir
     @Override
     public double getArea() {
         return Math.sqrt(halfPerimeter()*(halfPerimeter()-firstSide)*(halfPerimeter()-secondSide)*(halfPerimeter()-thirdSide)) ;

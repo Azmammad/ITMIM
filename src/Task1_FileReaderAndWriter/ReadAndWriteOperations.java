@@ -7,11 +7,13 @@ public class ReadAndWriteOperations {
         try (BufferedReader reader = new BufferedReader(new FileReader("text.txt"));
              BufferedWriter writer = new BufferedWriter(new FileWriter("cloneText.txt"));) {
             String str;
+            int wordCount = 0;
             while ((str = reader.readLine()) != null) {
-                writer.write(str);
-                writer.newLine();
+                String[] words = str.split("\\s+");
+                wordCount += words.length;
             }
-            System.out.println("Transfer is succesful");
+            writer.write("Number of words in text.txt: " + wordCount);
+            System.out.println("Transfer is successful");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

@@ -19,28 +19,35 @@ public class InputNumberArray {
         }
 
         System.out.println(Arrays.toString(array));
-        System.out.println("Choose :\n1. Ascending Order \n2. Descending order");
-        int input = sc.nextInt();
-        switch (input){
-            case 1:
-                System.out.println(Arrays.toString(Arrays.stream(array).sorted().toArray()));
-                break;
-            case 2:
-                Arrays.sort(array);
-                reverseArray(array);
-                System.out.println(Arrays.toString(array));
-                break;
-            default:
-                System.out.println("Incorrect choice");
+        while (true) {
+            System.out.println("Choose :\n1. Ascending Order \n2. Descending order \n3. Exit");
+            int input = sc.nextInt();
+            switch (input) {
+                case 1:
+                    System.out.println(Arrays.toString(Arrays.stream(array).sorted().toArray()));
+                    break;
+                case 2:
+                    Arrays.sort(array);
+                    reverseArray(array);
+                    System.out.println(Arrays.toString(array));
+                    break;
+                case 3:
+                    System.exit(0);
+                default:
+                    System.out.println("Incorrect choice");
+            }
+        }
         }
 
-    }
 
     public static void reverseArray(int[] array) {
         for (int i = 0; i < array.length / 2; i++) {
             int temp = array[i];
             array[i] = array[array.length - i - 1];
             array[array.length - i - 1] = temp;
+
         }
     }
 }
+
+
